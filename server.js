@@ -33,8 +33,8 @@ app.get('/', (req, res) => {
     res.json({ message: 'Welcome to Portofolio REST API' });
 });
 
-// Posts Routes
 require('./app/routes/profile.routes')(app);
+require('./app/routes/menu.routes')(app);
 
 app.listen('8081', () => {
     console.log('Server is running on port 8081');

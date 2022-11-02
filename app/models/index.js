@@ -20,5 +20,6 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.profile = require('./profile.model.js')(sequelize, Sequelize);
+db.menu = require('./menu.model.js')(sequelize, Sequelize);
 
 module.exports = db;
