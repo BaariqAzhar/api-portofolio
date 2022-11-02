@@ -21,5 +21,8 @@ db.sequelize = sequelize;
 
 db.profile = require('./profile.model.js')(sequelize, Sequelize);
 db.menu = require('./menu.model.js')(sequelize, Sequelize);
+db.socialMedia = require('./socialMedia.model.js')(sequelize, Sequelize);
+db.article = require('./article.model.js')(sequelize, Sequelize);
+db.experiece = require('./experience.model.js')(sequelize, Sequelize);
 
 module.exports = db;
