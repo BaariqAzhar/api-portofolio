@@ -33,9 +33,9 @@ app.get('/', (req, res) => {
     res.json({ message: 'Welcome to Portofolio REST API' });
 });
 
-require('./app/routes/profile.routes')(app);
-require('./app/routes/menu.routes')(app);
-require('./app/routes/intro.routes')(app);
+require('./app/routes/table-based/profile.routes')(app);
+require('./app/routes/table-based/menu.routes')(app);
+require('./app/routes/table-based/intro.routes')(app);
 const socialMediaRoute = require('./app/routes/table-based/socialMedia.routes');
 socialMediaRoute(app);
 

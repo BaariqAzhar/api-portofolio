@@ -1,4 +1,4 @@
-const db = require('../models');
+const db = require('../../models');
 const Intro = db.intro;
 const Op = db.Sequelize.Op;
 

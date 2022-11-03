@@ -1,10 +1,8 @@
-const db = require('../models');
+const db = require('../../models');
 const Menu = db.menu;
 const Op = db.Sequelize.Op;
 
-// Create and Save a new Menu
-exports.create = (req, res) => {
-    // Validate request
+const create = (req, res) => {
     if (!req.body.order && !req.body.name_en && !req.body.name_id) {
         res.status(400).send({
             message: 'English and Indonesian name & order can not be empty!',
@@ -12,14 +10,12 @@ exports.create = (req, res) => {
         return;
     }
 
-    // Create a Post
     const menu = {
         order: req.body.order,
         name_en: req.body.name_en,
         name_id: req.body.name_id,
     };
 
-    // Save Post in the database
     Menu.create(menu)
         .then((data) => {
             res.send(data);
@@ -31,8 +27,7 @@ exports.create = (req, res) => {
         });
 };
 
-// Retrieve all Menu from the database.
-exports.findAll = (req, res) => {
+const findAll = (req, res) => {
     Menu.findAll()
         .then((data) => {
             res.send(data);
@@ -43,3 +38,5 @@ exports.findAll = (req, res) => {
             });
         });
 };
+
+module.exports = { create, findAll };
