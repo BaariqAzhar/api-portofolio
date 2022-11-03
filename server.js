@@ -47,6 +47,9 @@ socialMediaRoute(app);
 articleRoute(app);
 experieceRoute(app);
 
+const getNavbar = require('./app/routes/component-based/getNavbar.routes.js');
+getNavbar(app);
+
 app.listen('8081', () => {
     console.log('Server is running on port 8081');
 });

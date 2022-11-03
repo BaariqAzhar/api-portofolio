@@ -21,6 +21,12 @@ module.exports = (sequelize, Sequelize) => {
         name_en: {
             type: Sequelize.STRING,
         },
+        path: {
+            type: Sequelize.STRING,
+        },
+        privilege: {
+            type: Sequelize.STRING,
+        },
     });
 
     return Menu;
