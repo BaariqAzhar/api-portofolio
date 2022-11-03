@@ -19,10 +19,10 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.BOOLEAN,
         },
         description_id: {
-            type: Sequelize.STRING,
+            type: Sequelize.TEXT('long'),
         },
         description_en: {
-            type: Sequelize.STRING,
+            type: Sequelize.TEXT('long'),
         },
     });
 

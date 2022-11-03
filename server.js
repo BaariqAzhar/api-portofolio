@@ -35,6 +35,9 @@ app.get('/', (req, res) => {
 
 require('./app/routes/profile.routes')(app);
 require('./app/routes/menu.routes')(app);
+require('./app/routes/intro.routes')(app);
+const socialMediaRoute = require('./app/routes/table-based/socialMedia.routes');
+socialMediaRoute(app);
 
 app.listen('8081', () => {
     console.log('Server is running on port 8081');
