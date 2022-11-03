@@ -4,40 +4,45 @@ const Menu = db.menu;
 const Op = db.Sequelize.Op;
 
 const getNavbar = async (req, res) => {
-    // Menu.findAll({
-    //     attributes: ['name_id', 'name_en'],
-    // })
-    //     .then((data) => {
-    //         res.send(data);
-    //     })
-    //     .catch((err) => {
-    //         res.status(500).send({
-    //             message: err.message || 'Some error occured while find profile',
-    //         });
-    //     });
+    if (!req.body.lang && !req.body.privilege) {
+        res.status(400).send({
+            message: 'lang & privilege can not be empty!',
+        });
+        return;
+    }
+
+    let menu;
+    let profile;
 
     try {
-        const menu = await Menu.findAll({ attributes: ['name_id', 'name_en'] });
-        console.log('data', data);
-
-        res.send(data);
+        menu = await Menu.findAll();
+        menu = menu.map((item) => {
+            return {
+                order: item.order,
+                name: req.body.lang === 'id' ? item.name_id : item.name_en,
+                path: item.path,
+            };
+        });
+        menu = menu.sort((a, b) => (a.order > b.order ? 1 : -1));
     } catch (err) {
         res.status(500).send({
-            message: err.message || 'Some error occured while find profile',
+            message: err.message || 'Some error occured while query menu',
         });
     }
 
-    // Profile.findAll({
-    //     attributes: ['photo', 'name'],
-    // })
-    //     .then((data) => {
-    //         res.send(data);
-    //     })
-    //     .catch((err) => {
-    //         res.status(500).send({
-    //             message: err.message || 'Some error occured while find profile',
-    //         });
-    //     });
+    try {
+        profile = await Profile.findAll();
+    } catch (err) {
+        res.status(500).send({
+            message: err.message || 'Some error occured while query menu',
+        });
+    }
+
+    res.send({
+        name: profile?.[0]?.name,
+        photo: profile?.[0]?.photo,
+        menu: menu,
+    });
 };
 
 module.exports = { getNavbar };
