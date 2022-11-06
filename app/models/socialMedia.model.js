@@ -24,6 +24,9 @@ module.exports = (sequelize, Sequelize) => {
         link: {
             type: Sequelize.STRING,
         },
+        logo: {
+            type: Sequelize.STRING,
+        }
     });
 
     return SocialMedia;

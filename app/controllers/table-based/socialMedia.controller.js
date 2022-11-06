@@ -14,6 +14,8 @@ const create = (req, res) => {
         order: req.body.order,
         name_id: req.body.name_id,
         name_en: req.body.name_en,
+        link: req.body.link,
+        logo: req.body.logo,
     };
 
     SocialMedia.create(socialMedia)
