@@ -28,7 +28,7 @@ const getDashboard = async (req, res) => {
         socialMedia = socialMedia.sort((a, b) => (a.order > b.order ? 1 : -1));
     } catch (error) {
         res.status(500).send({
-            message: error.message || 'Some error occured while query menu',
+            message: error.message || 'Some error occured while query social media',
         });
     }
 
