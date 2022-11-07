@@ -50,9 +50,11 @@ experieceRoute(app);
 const getNavbar = require('./app/routes/component-based/getNavbar.routes.js');
 const getDashboard = require('./app/routes/component-based/getDashboard.routes.js');
 const getExperience = require('./app/routes/component-based/getExperience.routes.js');
+const getArticle = require('./app/routes/component-based/getArticle.routes.js');
 getNavbar(app);
 getDashboard(app);
 getExperience(app);
+getArticle(app);
 
 app.listen('8081', () => {
     console.log('Server is running on port 8081');
