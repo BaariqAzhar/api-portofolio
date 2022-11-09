@@ -4,7 +4,7 @@ const express = require('express');
 const getNavbarRoute = (app) => {
     let router = express.Router();
 
-    router.get('/', getNavbar.getNavbar);
+    router.post('/', getNavbar.getNavbar);
 
     app.use('/api/get-navbar', router);
 };

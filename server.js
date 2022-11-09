@@ -7,18 +7,18 @@ const db = require('./app/models');
 
 const app = express();
 
-// let whiteList = ['http://localhost:8081'];
-// let corsOptions = {
-//     origin: function (origin, callback) {
-//         if (whiteList.indexOf(origin) !== -1 || !origin) {
-//             callback(null, true);
-//         } else {
-//             callback(new Error('Not allowed by CORS'));
-//         }
-//     },
-// };
+let whiteList = ['http://localhost:3000'];
+let corsOptions = {
+    origin: function (origin, callback) {
+        if (whiteList.indexOf(origin) !== -1 || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+};
 
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
