@@ -4,7 +4,7 @@ const express = require('express');
 const getExperienceRoute = (app) => {
     let router = express.Router();
 
-    router.get('/', getExperience.getExperience);
+    router.post('/', getExperience.getExperience);
 
     app.use('/api/get-experience', router);
 };
