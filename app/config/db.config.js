@@ -1,15 +1,13 @@
+require('dotenv').config({ path: __dirname + '/.env' });
+
 module.exports = {
     /*
      * First five parameters are for MySQL connection.
      */
-    HOST: 'www.byeri.tech',
-    USER: 'byeritec_eri',
-    PASSWORD: 'erieri123',
-    DB: 'byeritec_wp296',
-    // HOST: 'localhost',
-    // USER: 'root',
-    // PASSWORD: '',
-    // DB: 'api_portofolio',
+    HOST: process.env['DB_HOST'],
+    USER: process.env['DB_USER'],
+    PASSWORD: process.env['DB_PASSWORD'],
+    DB: process.env['DB_DB'],
     dialect: 'mysql',
     pool: {
         max: 5, // maximum number of connection in pool

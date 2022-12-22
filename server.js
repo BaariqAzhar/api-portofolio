@@ -1,3 +1,4 @@
+require('dotenv').config({ path: __dirname + '/.env' });
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -7,7 +8,7 @@ const db = require('./app/models');
 
 const app = express();
 
-let whiteList = ['http://localhost:3000'];
+let whiteList = [process.env['LOCAL_FE']];
 let corsOptions = {
     origin: function (origin, callback) {
         if (whiteList.indexOf(origin) !== -1 || !origin) {
@@ -56,6 +57,6 @@ getDashboard(app);
 getExperience(app);
 getArticle(app);
 
-app.listen('8081', () => {
-    console.log('Server is running on port 8081');
+app.listen(process.env['PORT_BE'], () => {
+    console.log(`Server is running on port 8081 ${process.env['PORT_BE']}`);
 });
