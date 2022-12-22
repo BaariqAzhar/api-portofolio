@@ -8,7 +8,7 @@ const db = require('./app/models');
 
 const app = express();
 
-let whiteList = [process.env['LOCAL_FE']];
+let whiteList = [process.env['LOCAL_FE'], 'https://portofolio.byeri.tech/', 'http://portofolio.byeri.tech/'];
 let corsOptions = {
     origin: function (origin, callback) {
         if (whiteList.indexOf(origin) !== -1 || !origin) {
