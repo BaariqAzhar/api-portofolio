@@ -11,7 +11,7 @@
  * These functions will be used in our Controller.
  */
 module.exports = (sequelize, Sequelize) => {
-    const Profile = sequelize.define('profile', {
+    const Profile = sequelize.define('pf_profile', {
         name: {
             type: Sequelize.STRING,
         },

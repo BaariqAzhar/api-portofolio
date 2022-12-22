@@ -11,7 +11,7 @@
  * These functions will be used in our Controller.
  */
 module.exports = (sequelize, Sequelize) => {
-    const Experience = sequelize.define('experience', {
+    const Experience = sequelize.define('pf_experience', {
         order: {
             type: Sequelize.INTEGER,
         },

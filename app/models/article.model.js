@@ -11,7 +11,7 @@
  * These functions will be used in our Controller.
  */
 module.exports = (sequelize, Sequelize) => {
-    const Article = sequelize.define('article', {
+    const Article = sequelize.define('pf_article', {
         order: {
             type: Sequelize.INTEGER,
         },

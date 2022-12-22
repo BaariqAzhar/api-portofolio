@@ -11,7 +11,7 @@
  * These functions will be used in our Controller.
  */
 module.exports = (sequelize, Sequelize) => {
-    const SocialMedia = sequelize.define('social_media', {
+    const SocialMedia = sequelize.define('pf_social_media', {
         order: {
             type: Sequelize.INTEGER,
         },

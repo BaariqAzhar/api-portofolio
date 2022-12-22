@@ -11,7 +11,7 @@
  * These functions will be used in our Controller.
  */
 module.exports = (sequelize, Sequelize) => {
-    const Menu = sequelize.define('menu', {
+    const Menu = sequelize.define('pf_menu', {
         order: {
             type: Sequelize.INTEGER,
         },
