@@ -2,10 +2,14 @@ module.exports = {
     /*
      * First five parameters are for MySQL connection.
      */
-    HOST: 'localhost',
-    USER: 'root',
-    PASSWORD: '',
-    DB: 'api_portofolio',
+    HOST: 'www.byeri.tech',
+    USER: 'byeritec_eri',
+    PASSWORD: 'erieri123',
+    DB: 'byeritec_wp296',
+    // HOST: 'localhost',
+    // USER: 'root',
+    // PASSWORD: '',
+    // DB: 'api_portofolio',
     dialect: 'mysql',
     pool: {
         max: 5, // maximum number of connection in pool
