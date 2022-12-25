@@ -26,4 +26,6 @@ db.socialMedia = require('./socialMedia.model.js')(sequelize, Sequelize);
 db.article = require('./article.model.js')(sequelize, Sequelize);
 db.experiece = require('./experience.model.js')(sequelize, Sequelize);
 
+db.auth = require('./auth.model.js')(sequelize, Sequelize);
+
 module.exports = db;
