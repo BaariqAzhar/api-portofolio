@@ -8,7 +8,7 @@ const db = require('./app/models');
 
 const app = express();
 
-let whiteList = [process.env['LOCAL_FE'], 'https://portofolio.byeri.tech', 'http://portofolio.byeri.tech'];
+let whiteList = [process.env.FE_LOCAL, process.env.FE_PRODUCTION, process.env.FE_PRODUCTION_HTTP];
 let corsOptions = {
     origin: function (origin, callback) {
         if (whiteList.indexOf(origin) !== -1 || !origin) {
@@ -57,6 +57,6 @@ getDashboard(app);
 getExperience(app);
 getArticle(app);
 
-app.listen(process.env['PORT_BE'], () => {
-    console.log(`Server is running on port 8081 ${process.env['PORT_BE']}`);
+app.listen(process.env.BE_PORT, () => {
+    console.log(`Server is running on port 8081 ${process.env.BE_PORT}`);
 });
