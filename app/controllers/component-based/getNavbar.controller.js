@@ -4,9 +4,9 @@ const Menu = db.menu;
 const Op = db.Sequelize.Op;
 
 const getNavbar = async (req, res) => {
-    if (!req.body.lang && !req.body.privilege) {
+    if (!req.body.lang) {
         res.status(400).send({
-            message: 'lang & privilege can not be empty!',
+            message: 'lang',
         });
         return;
     }
@@ -16,6 +16,9 @@ const getNavbar = async (req, res) => {
 
     try {
         menu = await Menu.findAll();
+        if (req?.privilege) {
+            menu = menu.filter((item) => item.privilege.includes(req?.privilege));
+        }
         menu = menu.map((item) => {
             return {
                 order: item.order,
