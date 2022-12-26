@@ -27,8 +27,14 @@ const login = async (req, res) => {
             },
         });
     } catch (err) {
-        res.status(500).send({
+        return res.status(500).send({
             message: err.message || 'Some error occured while query auth',
+        });
+    }
+
+    if (auth?.length === 0) {
+        return res.status(401).send({
+            message: 'Email or password is incorrect',
         });
     }
 
@@ -50,8 +56,6 @@ const login = async (req, res) => {
         .catch((err) => {
             return res.status(500).send({ message: err.message || 'Some error occurred while creating the refresh token.' });
         });
-
-    // res.send(dataEncode);
 };
 
 module.exports = login;
