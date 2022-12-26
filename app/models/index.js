@@ -27,5 +27,6 @@ db.article = require('./article.model.js')(sequelize, Sequelize);
 db.experiece = require('./experience.model.js')(sequelize, Sequelize);
 
 db.auth = require('./auth.model.js')(sequelize, Sequelize);
+db.refreshToken = require('./refreshToken.model.js')(sequelize, Sequelize);
 
 module.exports = db;

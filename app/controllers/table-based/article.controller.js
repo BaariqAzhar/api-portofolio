@@ -18,7 +18,7 @@ const create = (req, res) => {
         description_id: req.body.description_id,
         description_en: req.body.description_en,
     };
-l
+
     Article.create(article)
         .then((data) => {
             res.send(data);
