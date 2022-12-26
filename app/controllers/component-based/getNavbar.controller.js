@@ -45,4 +45,4 @@ const getNavbar = async (req, res) => {
     });
 };
 
-module.exports = { getNavbar };
+module.exports = getNavbar;
