@@ -40,6 +40,9 @@ loginRoute(app);
 const getNewerTokenRoute = require('./app/routes/auth/getNewerToken.routes');
 getNewerTokenRoute(app);
 
+const logoutRoute = require('./app/routes/auth/logout.routes');
+logoutRoute(app);
+
 app.listen(process.env.BE_AUTH_PORT, () => {
     console.log(`Auth Server is running on port ${process.env.BE_AUTH_PORT}`);
 });
