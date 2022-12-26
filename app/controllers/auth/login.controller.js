@@ -6,7 +6,7 @@ const Op = db.Sequelize.Op;
 require('dotenv').config({ path: __dirname + '/.env' });
 
 function generateAccessToken(data) {
-    return jwt.sign(data, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1m' });
+    return jwt.sign(data, process.env.ACCESS_TOKEN_SECRET, { expiresIn: process.env['TOKEN_EXPIRED_PERIOD'] });
 }
 
 const login = async (req, res) => {
