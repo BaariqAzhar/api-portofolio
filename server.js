@@ -8,7 +8,7 @@ const db = require('./app/models');
 
 const app = express();
 
-let whiteList = [process.env.FE_LOCAL, process.env.FE_PRODUCTION, process.env.FE_PRODUCTION_HTTP];
+let whiteList = [process.env.FE_LOCAL, process.env.FE_PRODUCTION, process.env.FE_PRODUCTION_HTTP, process.env.FE_LINK_PRODUCTION];
 let corsOptions = {
     origin: function (origin, callback) {
         if (whiteList.indexOf(origin) !== -1 || !origin) {
